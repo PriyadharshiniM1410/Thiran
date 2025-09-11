@@ -28,21 +28,32 @@ export default function StudentProjectsForm({ onNext }) {
     setProjects(updated);
   };
 
+
   const validate = () => {
     const newErrors = {};
-    if (!username.trim() || username.trim().length < 3) {
+
+ 
+    if (username === "") {
+      newErrors.username = "Username is required.";
+    } else if (username.length < 3) {
       newErrors.username = "Username must be at least 3 characters.";
+    } else if (username.indexOf(" ") !== -1) {
+      newErrors.username = "Username should not contain spaces.";
     }
 
     const projectErrors = projects.map((p) => {
       const err = {};
-      if (!p.name.trim()) err.name = "Project name is required.";
-      if (!p.description.trim()) err.description = "Project description is required.";
 
+      if (p.name === "") err.name = "Project name is required.";
+      if (p.description === "") err.description = "Project description is required.";
+      
+      if (p.gitHub !== "" && !(p.gitHub.startsWith("http://") || p.gitHub.startsWith("https://"))) {
+        err.gitHub = "GitHub URL must start with http:// or https://";
+      }
 
-      const urlPattern = /^(https?:\/\/)?([\w.-]+)\.([a-z]{2,6})(\/[\w.-]*)*\/?$/i;
-      if (p.gitHub && !urlPattern.test(p.gitHub)) err.gitHub = "Invalid GitHub URL.";
-      if (p.website && !urlPattern.test(p.website)) err.website = "Invalid Website URL.";
+      if (p.website !== "" && !(p.website.startsWith("http://") || p.website.startsWith("https://"))) {
+        err.website = "Website URL must start with http:// or https://";
+      }
 
       return err;
     });
@@ -62,7 +73,7 @@ export default function StudentProjectsForm({ onNext }) {
     try {
       await axios.post("http://localhost:5000/pendingRequests", {
         username,
-        projects: projects.filter(p => p.name.trim() !== ""),
+        projects: projects.filter(p => p.name !== ""),
         status: "pending",
       });
 
@@ -76,18 +87,17 @@ export default function StudentProjectsForm({ onNext }) {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-6 bg-purple-300 rounded-2xl shadow-xl">
-      <h2 className="text-3xl font-extrabold text-center text-purple-900 mb-8">
+    <div className="max-w-2xl mx-auto mt-10 p-6 bg-purple-400 rounded-2xl shadow-xl">
+      <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-8">
         Student Projects Form
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        
+        {/* Username */}
         <div>
           <label className="block text-lg font-semibold mb-1">Username</label>
           <input
             type="text"
-            name="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Enter username"
@@ -104,7 +114,6 @@ export default function StudentProjectsForm({ onNext }) {
           <div key={index} className="p-4 border rounded-lg bg-white space-y-4">
             <h3 className="text-lg font-semibold text-red-700">Project {index + 1}</h3>
 
-           
             <div>
               <label className="block text-sm font-medium mb-1">Project Name</label>
               <input
@@ -123,7 +132,7 @@ export default function StudentProjectsForm({ onNext }) {
               )}
             </div>
 
-            
+          
             <div>
               <label className="block text-sm font-medium mb-1">Description</label>
               <textarea
@@ -159,7 +168,7 @@ export default function StudentProjectsForm({ onNext }) {
             <div>
               <label className="block text-sm font-medium mb-1">GitHub Link</label>
               <input
-                type="url"
+                type="text"
                 name="gitHub"
                 value={project.gitHub}
                 onChange={(e) => handleChange(index, e)}
@@ -177,7 +186,7 @@ export default function StudentProjectsForm({ onNext }) {
             <div>
               <label className="block text-sm font-medium mb-1">Website Link</label>
               <input
-                type="url"
+                type="text"
                 name="website"
                 value={project.website}
                 onChange={(e) => handleChange(index, e)}
@@ -209,13 +218,13 @@ export default function StudentProjectsForm({ onNext }) {
           <button
             type="button"
             onClick={addProject}
-            className="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600"
+            className="px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-700"
           >
             + Add Another Project
           </button>
           <button
             type="submit"
-            className="px-6 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800"
+            className="px-6 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800"
           >
             Submit Projects
           </button>
@@ -224,3 +233,6 @@ export default function StudentProjectsForm({ onNext }) {
     </div>
   );
 }
+
+
+

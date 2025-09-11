@@ -85,17 +85,6 @@
       "currentStatus": "Internship",
       "photoUrl": "IMG-20241106-WA0002.jpg",
       "status": "pending"
-    },
-    {
-      "id": "bed8",
-      "username": "anjalikumar",
-      "firstName": "Anjali",
-      "lastName": "Kumar",
-      "email": "anjalikumar@gmail.com",
-      "phoneNumber": "6745869037",
-      "description": "Passionate about both frontend and backend technologies.",
-      "currentStatus": "Internship",
-      "photoUrl": "IMG-20241106-WA0002.jpg"
     }
   ],
   "mentors": [
@@ -103,7 +92,7 @@
       "id": "1",
       "firstName": "Ravi",
       "lastName": "Kannan",
-      "email": "ravi@example.com",
+      "email": "ravikannan@gmail.com",
       "username": "ravi_m",
       "description": "Mentor with 10 years of experience in web development and mentoring students.",
       "expertise": "Full Stack Development",
@@ -328,24 +317,5 @@
       "remark": "Good understanding of frontend basics, needs to improve in state management."
     }
   ],
-  "pendingRequests": [
-    {
-      "id": "65c3",
-      "type": "info",
-      "username": "anjalikumar",
-      "data": {
-        "id": "bed8",
-        "username": "anjalikumar",
-        "firstName": "Anjali",
-        "lastName": "Kumar",
-        "email": "anjalikumar@gmail.com",
-        "phoneNumber": "6745869037",
-        "description": "Passionate about both frontend and backend technologies.",
-        "currentStatus": "Internship",
-        "photoUrl": "IMG-20241106-WA0002.jpg",
-        "graduationYear": "2026"
-      },
-      "status": "pending"
-    }
-  ]
+  "pendingRequests": []
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -15,6 +15,7 @@ import StudentList from "./pages/StudentList";
 
 // Mentor
 import MentorDashboard from "./dashboard/mentors/MentorDashboard";
+import MentorProfile from "./pages/MentorProfile";
 import PendingRequests from "./dashboard/mentors/PendingRequests";
 import PendingDetails from "./dashboard/mentors/PendingDetails";
 
@@ -33,19 +34,14 @@ export default function App() {
       <Navbar userRole={userRole} setUserRole={setUserRole} />
 
       <Routes>
-       
         <Route
           path="/"
           element={
-            !userRole ? (
-              <LoginPage setUserRole={setUserRole} />
-            ) : (
-              <Navigate to="/home" replace />
-            )
+            !userRole ? <LoginPage setUserRole={setUserRole} /> : <Navigate to="/home" replace />
           }
         />
 
-   
+      
         <Route path="/home" element={<Home />} />
 
         <Route
@@ -71,6 +67,8 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+
+        
         <Route
           path="/student/profile/:username"
           element={
@@ -84,19 +82,25 @@ export default function App() {
           path="/mentor/*"
           element={
             <ProtectedRoute allowedRoles="mentor" userRole={userRole}>
-                <MentorDashboard />
+              <MentorDashboard />
             </ProtectedRoute>
           }
         >
-            <Route index element={<PendingRequests />} />  
-            <Route path="pending" element={<PendingRequests />} />
-            <Route path="pending/:username" element={<PendingDetails />} />
-            <Route path="list" element={<StudentList />} />
-            <Route path="profile/:username" element={<StudentProfile />} />
-            </Route>
+          <Route index element={<PendingRequests />} />
+          <Route path="pending" element={<PendingRequests />} />
+          <Route path="pending/:username" element={<PendingDetails />} />
+          <Route path="list" element={<StudentList />} />
+        </Route>
 
+        <Route
+          path="/mentor/profile/:username"
+          element={
+            <ProtectedRoute allowedRoles={["mentor", "student", "user"]} userRole={userRole}>
+              <MentorProfile />
+            </ProtectedRoute>
+          }
+        />
 
-        
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

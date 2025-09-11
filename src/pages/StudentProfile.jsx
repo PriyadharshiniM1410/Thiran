@@ -9,18 +9,28 @@ export default function StudentProfile() {
   const [projects, setProjects] = useState([]);
   const [remarks, setRemarks] = useState([]);
 
+  
   useEffect(() => {
     axios.get(`http://localhost:5000/students?username=${username}`)
       .then(res => setStudent(res.data[0] || undefined))
       .catch(() => setStudent(undefined));
   }, [username]);
 
+  
   useEffect(() => {
     if (!student?.id) return;
-    axios.get(`http://localhost:5000/skills?studentId=${student.id}`).then(res => setSkills(res.data));
-    axios.get(`http://localhost:5000/projects?studentId=${student.id}`).then(res => setProjects(res.data));
+
+    
+    axios.get(`http://localhost:5000/skills?studentId=${student.id}`)
+      .then(res => setSkills(res.data));
+
+    
+    axios.get(`http://localhost:5000/projects?studentId=${student.id}`)
+      .then(res => setProjects(res.data));
+
+    
     axios.get(`http://localhost:5000/studentMentorRemarks?studentId=${student.id}`)
-      .then(async (res) => {
+      .then(async res => {
         const data = await Promise.all(res.data.map(async r => {
           if (r.mentorId) {
             const mentorRes = await axios.get(`http://localhost:5000/mentors/${r.mentorId}`);
@@ -32,13 +42,14 @@ export default function StudentProfile() {
       });
   }, [student]);
 
+  
   if (student === null) return <p className="text-center mt-12 text-gray-700">Loading...</p>;
   if (student === undefined) return <p className="text-center mt-12 text-red-600">No student found.</p>;
 
   return (
     <div className="max-w-4xl mx-auto my-12 p-6 bg-white shadow-xl rounded-2xl space-y-8">
 
-      {/* Header */}
+      
       <div className="flex flex-col sm:flex-row items-center gap-6 border-b-2 border-indigo-100 pb-6">
         <img
           src={student.photoUrl || "https://via.placeholder.com/150?text=Student"}
@@ -51,16 +62,15 @@ export default function StudentProfile() {
         </div>
       </div>
 
-      {/* About Section */}
       <div className="p-4 rounded-xl border-l-4 border-red-400 bg-red-50 shadow-sm">
         <h2 className="text-xl font-semibold text-gray-800 mb-2 border-b border-gray-200 pb-1">About</h2>
         <p className="text-gray-700">{student.description || "No description provided."}</p>
       </div>
 
-      {/* Skills */}
+    
       <div className="p-4 rounded-xl border-l-4 border-green-400 bg-green-50 shadow-sm">
         <h2 className="text-xl font-semibold text-green-700 mb-2 border-b border-green-200 pb-1">Skills</h2>
-        {skills.length ? (
+        {skills.length > 0 ? (
           <div className="flex flex-wrap gap-2 mt-2">
             {skills.map(s => (
               <span key={s.id} className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium shadow-sm">
@@ -71,10 +81,10 @@ export default function StudentProfile() {
         ) : <p className="text-gray-500 mt-2">No skills listed.</p>}
       </div>
 
-      {/* Projects */}
+     
       <div className="p-4 rounded-xl border-l-4 border-blue-400 bg-blue-50 shadow-sm">
         <h2 className="text-xl font-semibold text-blue-700 mb-2 border-b border-blue-200 pb-1">Projects</h2>
-        {projects.length ? (
+        {projects.length > 0 ? (
           <div className="space-y-4 mt-2">
             {projects.map(p => (
               <div key={p.id} className="p-4 bg-white border rounded-lg shadow hover:shadow-md transition">
@@ -97,18 +107,19 @@ export default function StudentProfile() {
         ) : <p className="text-gray-500 mt-2">No projects yet.</p>}
       </div>
 
-      {/* Mentor Remarks */}
+      
       <div className="p-4 rounded-xl border-l-4 border-purple-400 bg-purple-50 shadow-sm">
         <h2 className="text-xl font-semibold text-purple-700 mb-2 border-b border-purple-200 pb-1">Mentor Remarks</h2>
-        {remarks.length ? (
+        {remarks.length > 0 ? (
           <div className="space-y-3 mt-2">
             {remarks.map(r => (
               <div key={r.id} className="p-3 bg-white border rounded-lg shadow-sm">
                 <blockquote className="italic text-gray-700">“{r.remark}”</blockquote>
                 <p className="text-gray-500 text-sm mt-1">— {r.mentor ? (
-                  <Link to={`/mentor/profile/${r.mentor.username}`} className="text-purple-600 hover:underline">{r.mentor.firstName} {r.mentor.lastName}</Link>
-                     ) : "Mentor"}
-                     </p>
+                  <Link to={`/mentor/profile/${r.mentor.username}`} className="text-purple-600 hover:underline">
+                    {r.mentor.firstName} {r.mentor.lastName}
+                  </Link>
+                ) : "Mentor"}</p>
               </div>
             ))}
           </div>

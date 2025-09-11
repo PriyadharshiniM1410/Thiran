@@ -5,14 +5,14 @@ export default function Navbar({ userRole, setUserRole }) {
 
   const handleLogout = () => {
     localStorage.removeItem("userRole");
-    localStorage.removeItem("userEmail"); // mentor/student email remove
+    localStorage.removeItem("userEmail"); 
     setUserRole(null);
     navigate("/");
   };
 
   return (
-    <nav className="bg-gray-800 text-white px-6 py-3 flex justify-between items-center">
-      <Link to={userRole ? "/home" : "/"} className="text-xl font-bold">
+    <nav className="bg-gray-800 text-white px-6 py-3 flex justify-between items-center text-xl">
+      <Link to={userRole ? "/home" : "/"} className="text-3xl font-bold">
         Thiran
       </Link>
 

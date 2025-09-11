@@ -25,11 +25,10 @@ export default function MentorDashboard() {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      {/* Sidebar */}
+     
       <aside className="w-64 bg-indigo-600 text-white p-6 flex flex-col rounded-r-2xl">
         <h1 className="text-2xl font-extrabold mb-6 text-center">Mentor Dashboard</h1>
 
-        {/* Navigation */}
         <nav className="flex flex-col gap-6">
           {navItems.map((item) => (
             <Link

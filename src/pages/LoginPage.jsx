@@ -9,68 +9,83 @@ export default function LoginPage({ setUserRole }) {
 
   const navigate = useNavigate();
 
-  const validateEmail = (email) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  
+  function validateEmail(email) {
+    const atPosition = email.indexOf("@");
+    if (atPosition === -1) {
+      return false; 
+    }
 
-  const handleLogin = (e) => {
+    const dotPosition = email.indexOf(".", atPosition);
+    if (dotPosition === -1) {
+      return false; 
+    }
+
+    if (atPosition === 0 || dotPosition === email.length - 1) {
+      return false; 
+    }
+    if (atPosition === email.length - 1|| dotPosition === 0) {
+      return false; 
+    }
+
+    return true; 
+  }
+
+  function handleLogin(e) {
     e.preventDefault();
     setError("");
 
-    if (!email || !password) {
+    
+    if (email === "" || password === "") {
       setError("Email and password are required.");
       return;
     }
-
     if (!validateEmail(email)) {
       setError("Please enter a valid email.");
       return;
     }
-
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters.");
+    if (password.length < 10 ) {
+      setError("Password must be atleast lessthan 10 characters.");
       return;
     }
-
     const roleLower = role.toLowerCase();
-
     localStorage.setItem("userRole", roleLower);
     localStorage.setItem("userEmail", email);
-
     setUserRole(roleLower);
 
-    switch (roleLower) {
-      case "user":
-        navigate("/home"); 
-        break;
-      case "student":
-        navigate("/student");
-        break;
-      case "mentor":
-        navigate("/mentor/pending");
-        break;
-      case "admin":
-        navigate("/admin");
-        break;
-      case "company":
-        navigate("/company");
-        break;
-      default:
-        navigate("/home");
+    
+    if (roleLower === "user") {
+      navigate("/home");
+    } 
+    else if (roleLower === "student") {
+      navigate("/student");
     }
-  };
+    else if (roleLower === "mentor") {
+      navigate("/mentor/pending");
+    } 
+    else if (roleLower === "admin") {
+      navigate("/admin");
+    } 
+    else if (roleLower === "company") {
+      navigate("/company");
+    } 
+    else {
+      navigate("/home");
+    }
+  }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-tr from-indigo-100 via-purple-100 to-pink-100">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-tr from-indigo-300 via-purple-300 to-pink-300">
       <form
         onSubmit={handleLogin}
-        className="bg-white p-8 rounded-3xl shadow-2xl w-96 text-center transition-transform transform hover:scale-105"
+        className="bg-white p-8 rounded-3xl shadow-2xl w-96 text-center"
       >
         <h2 className="text-3xl font-extrabold mb-6 text-indigo-700">Welcome</h2>
 
         <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
-          className="w-full border border-gray-300 p-3 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
+          className="w-full border border-gray-300 p-3 rounded-xl mb-4"
         >
           <option value="user">User</option>
           <option value="student">Student</option>
@@ -79,32 +94,28 @@ export default function LoginPage({ setUserRole }) {
           <option value="company">Company</option>
         </select>
 
-       
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border border-gray-300 p-3 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
-        />
-
-       
+          className="w-full border border-gray-300 p-3 rounded-xl mb-4"/>
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border border-gray-300 p-3 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
-        />
+          className="w-full border border-gray-300 p-3 rounded-xl mb-4"/>
 
-        {error && <p className="text-red-600 mb-4 text-sm font-medium">{error}</p>}
+        {error !== "" && (
+          <p className="text-red-600 mb-4 text-sm">{error}</p>
+        )}
 
         <button
           type="submit"
-          className="w-full py-3 rounded-xl bg-indigo-600 text-white font-semibold text-lg shadow-md hover:bg-indigo-700 hover:shadow-lg transition transform active:scale-95"
-        >
+          className="w-full py-3 rounded-xl bg-indigo-600 text-white font-semibold text-lg">
           Login
-        </button>
+          </button>
       </form>
     </div>
   );

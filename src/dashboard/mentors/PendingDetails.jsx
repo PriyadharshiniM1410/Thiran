@@ -11,7 +11,6 @@ export default function PendingDetails() {
   useEffect(() => {
     axios.get("http://localhost:5000/pendingRequests")
       .then(res => {
-        // filter only this student's requests
         const data = res.data.filter(r => r.username === username);
         setRequests(data);
       })
@@ -50,7 +49,7 @@ export default function PendingDetails() {
     <div className="p-6 space-y-6">
       <h2 className="text-2xl font-bold mb-4">Student Details: {username}</h2>
 
-      {/* Personal Info */}
+      
       {info && (
         <div className="bg-white p-4 rounded shadow">
           <h3 className="text-xl font-semibold mb-2">Personal Info</h3>
@@ -64,7 +63,7 @@ export default function PendingDetails() {
         </div>
       )}
 
-      {/* Skills */}
+      
       {skills && (
         <div className="bg-white p-4 rounded shadow">
           <h3 className="text-xl font-semibold mb-2">Skills</h3>
@@ -76,7 +75,7 @@ export default function PendingDetails() {
         </div>
       )}
 
-      {/* Projects */}
+     
       {projects && (
         <div className="bg-white p-4 rounded shadow">
           <h3 className="text-xl font-semibold mb-2">Projects</h3>
@@ -88,7 +87,7 @@ export default function PendingDetails() {
         </div>
       )}
 
-      {/* Mentor Remark */}
+     
       <div className="bg-white p-4 rounded shadow">
         <h3 className="text-xl font-semibold mb-2">Mentor Remark</h3>
         <textarea

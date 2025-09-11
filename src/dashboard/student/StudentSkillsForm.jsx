@@ -12,35 +12,49 @@ export default function StudentSkillsForm({ onNext }) {
     "SQL","MongoDB","Kotlin","Flutter"
   ];
 
+  
   const handleSkillChange = (i, value) => {
     const updated = [...skills];
     updated[i] = value;
     setSkills(updated);
-    setErrors({ ...errors, skills: null }); 
+    setErrors({ ...errors, skills: null });
   };
 
+  //add new skill
   const addSkill = () => setSkills([...skills, ""]);
 
+ 
   const validate = () => {
     const newErrors = {};
-    if (!username.trim() || username.trim().length < 3) {
+
+    //username validate
+    if (username === "") {
+      newErrors.username = "Username is required.";
+    } else if (username.length < 3) {
       newErrors.username = "Username must be at least 3 characters.";
+    } else if (username.indexOf(" ") !== -1) {
+      newErrors.username = "Username should not contain spaces.";
     }
 
+    //Skills validate
     const selectedSkills = skills.filter((s) => s.trim() !== "");
     if (selectedSkills.length === 0) {
       newErrors.skills = "Please select at least one skill.";
     }
 
-    // Optional: check for duplicate skills
-    const duplicates = selectedSkills.filter((item, idx) => selectedSkills.indexOf(item) !== idx);
-    if (duplicates.length > 0) {
-      newErrors.skills = "Duplicate skills are not allowed.";
+    //Check duplicates
+    for (let i = 0; i < selectedSkills.length; i++) {
+      for (let j = i + 1; j < selectedSkills.length; j++) {
+        if (selectedSkills[i] === selectedSkills[j]) {
+          newErrors.skills = "Duplicate skills are not allowed.";
+        }
+      }
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,13 +77,13 @@ export default function StudentSkillsForm({ onNext }) {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-6 bg-purple-300 rounded-2xl shadow-xl">
-      <h2 className="text-3xl font-extrabold text-center text-purple-900 mb-8">
+    <div className="max-w-2xl mx-auto mt-10 p-6 bg-purple-400 rounded-2xl shadow-xl">
+      <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-8">
         Student Skills Form
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        
+        {/* Username */}
         <div>
           <h3 className="text-lg font-semibold mb-1">Username</h3>
           <input
@@ -106,18 +120,17 @@ export default function StudentSkillsForm({ onNext }) {
         ))}
         {errors.skills && <p className="text-red-600 mt-1">{errors.skills}</p>}
 
-      
         <div className="flex justify-between">
           <button
             type="button"
             onClick={addSkill}
-            className="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600"
+            className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-800"
           >
             + Add Another Skill
           </button>
           <button
             type="submit"
-            className="bg-purple-700 text-white py-2 px-6 rounded-lg hover:bg-purple-800"
+            className="bg-red-700 text-white py-2 px-6 rounded-lg hover:bg-red-800"
           >
             Submit Skills
           </button>
