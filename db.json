@@ -1,0 +1,351 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "firstName": "Arun",
+      "lastName": "Kumar",
+      "username": "arun01",
+      "email": "arun@example.com",
+      "phoneNumber": "9876543210",
+      "description": "Passionate MERN Stack Developer",
+      "currentYear": "FinalYear",
+      "currentStatus": "Internship",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "2",
+      "firstName": "Priya",
+      "lastName": "Sharma",
+      "username": "priya01",
+      "email": "priya@example.com",
+      "phoneNumber": "9876500000",
+      "description": "Java Backend Developer, loves Spring Boot",
+      "currentYear": "PassedOut",
+      "currentStatus": "Internship",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "3",
+      "firstName": "Neha",
+      "lastName": "Verma",
+      "username": "neha03",
+      "email": "neha.verma@gmail.com",
+      "phoneNumber": "9012345678",
+      "description": "Love exploring AI and data science with Python.",
+      "currentYear": "PassedOut",
+      "currentStatus": "Internship",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "4",
+      "firstName": "Priya",
+      "lastName": "Kumar",
+      "username": "priya98",
+      "email": "priya.kumar@gmail.com",
+      "phoneNumber": "9876501234",
+      "currentYear": "2nd Year",
+      "currentStatus": "Internship",
+      "description": "Frontend enthusiast exploring React.",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "5",
+      "firstName": "Karthik",
+      "lastName": "M",
+      "username": "karthikm",
+      "email": "karthik.m@gmail.com",
+      "phoneNumber": "9876011223",
+      "currentYear": "2nd Year",
+      "currentStatus": "Internship",
+      "description": "Mobile app developer focusing on Android.",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "3e83",
+      "firstName": "Rohit",
+      "lastName": "Singh",
+      "username": "rohit_s",
+      "email": "rohit.singh@gmail.com",
+      "phoneNumber": "9098765432",
+      "description": "Frontend enthusiast exploring React.",
+      "currentYear": "PassedOut",
+      "currentStatus": "NotEmployed",
+      "photoUrl": "IMG-20241106-WA0002.jpg",
+      "status": "pending"
+    },
+    {
+      "id": "edf6",
+      "firstName": "Anjali",
+      "lastName": "Sharma",
+      "username": "anjali.sharma",
+      "email": "anjali.sharma@gmail.com",
+      "phoneNumber": "9876543210",
+      "description": "Passionate about both frontend and backend technologies.",
+      "currentYear": "Year3",
+      "currentStatus": "Internship",
+      "photoUrl": "IMG-20241106-WA0002.jpg",
+      "status": "pending"
+    },
+    {
+      "id": "bed8",
+      "username": "anjalikumar",
+      "firstName": "Anjali",
+      "lastName": "Kumar",
+      "email": "anjalikumar@gmail.com",
+      "phoneNumber": "6745869037",
+      "description": "Passionate about both frontend and backend technologies.",
+      "currentStatus": "Internship",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    }
+  ],
+  "mentors": [
+    {
+      "id": "1",
+      "firstName": "Ravi",
+      "lastName": "Kannan",
+      "email": "ravi@example.com",
+      "username": "ravi_m",
+      "description": "Mentor with 10 years of experience in web development and mentoring students.",
+      "expertise": "Full Stack Development",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    }
+  ],
+  "skills": [
+    {
+      "id": "1",
+      "name": "React",
+      "studentId": 1
+    },
+    {
+      "id": "2",
+      "name": "Node.js",
+      "studentId": 1
+    },
+    {
+      "id": "3",
+      "name": "Java",
+      "studentId": 2
+    },
+    {
+      "id": "4",
+      "name": "Machine Learning",
+      "studentId": "3"
+    },
+    {
+      "id": "5",
+      "name": "React",
+      "studentId": "3"
+    },
+    {
+      "id": "6",
+      "name": "CSS",
+      "studentId": "4"
+    },
+    {
+      "id": "7",
+      "name": "HTML",
+      "studentId": "4"
+    },
+    {
+      "id": "4e42",
+      "name": "Java",
+      "studentId": "5"
+    },
+    {
+      "id": "8133",
+      "name": "Kotlin",
+      "studentId": "5"
+    },
+    {
+      "id": "fc72",
+      "name": "Firebase",
+      "studentId": "5"
+    },
+    {
+      "id": "ee27",
+      "name": "React",
+      "studentId": "3e83"
+    },
+    {
+      "id": "aa0d",
+      "name": "CSS",
+      "studentId": "3e83"
+    },
+    {
+      "id": "ca5a",
+      "name": "HTML",
+      "studentId": "3e83"
+    },
+    {
+      "id": "9f98",
+      "name": "JavaScript",
+      "studentId": "edf6"
+    },
+    {
+      "id": "8256",
+      "name": "React",
+      "studentId": "edf6"
+    },
+    {
+      "id": "5ed7",
+      "name": "Node.js",
+      "studentId": "edf6"
+    },
+    {
+      "id": "c722",
+      "studentId": "bed8",
+      "name": "Python"
+    },
+    {
+      "id": "b715",
+      "studentId": "bed8",
+      "name": "Node.js"
+    },
+    {
+      "id": "a901",
+      "studentId": "5a62",
+      "name": "Node.js"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Student Portal",
+      "description": "Fullstack MERN app",
+      "developmentArea": "fullstack",
+      "gitHub": "https://github.com/arun/student-portal",
+      "website": "https://arun-portal.com",
+      "studentId": 1
+    },
+    {
+      "id": "2",
+      "name": "Portfolio Website",
+      "description": "Personal portfolio frontend",
+      "developmentArea": "frontend",
+      "gitHub": "https://github.com/arun/portfolio",
+      "website": "https://arun-portfolio.com",
+      "studentId": 2
+    },
+    {
+      "id": "3",
+      "name": "Movie Recommendation System",
+      "developmentArea": "Data Science / Machine Learning",
+      "description": "Built a recommendation system using collaborative filtering.",
+      "gitHub": "https://github.com/neha-v/movie-recommender",
+      "website": "https://neha-mlprojects.com",
+      "studentId": 3
+    },
+    {
+      "id": "4",
+      "name": "Portfolio Website",
+      "developmentArea": "Frontend",
+      "description": "Personal portfolio to showcase my projects",
+      "github": "https://github.com/priya/portfolio",
+      "website": "https://priya-portfolio.com",
+      "studentId": 4
+    },
+    {
+      "id": "a94c",
+      "name": "Notes App",
+      "developmentArea": "Mobile",
+      "description": "Android app to save and sync notes",
+      "github": "https://github.com/karthik/notesapp",
+      "website": "https://karthik-notes.com",
+      "studentId": 5
+    },
+    {
+      "id": "96d3",
+      "name": "Portfolio Website",
+      "developmentArea": "Frontend",
+      "description": "Personal portfolio to showcase my projects",
+      "gitHub": "https://github.com/priya/portfolio",
+      "website": "",
+      "studentId": "3e83"
+    },
+    {
+      "id": "c3ab",
+      "name": "Full-Stack Todo App",
+      "developmentArea": "Full-stack",
+      "description": "A full-stack web application with a React frontend and a Node.js backend.",
+      "gitHub": "https://github.com/anjali/todo-app",
+      "website": "https://anjali-todo-app.com",
+      "studentId": "edf6"
+    }
+  ],
+  "studentMentorRemarks": [
+    {
+      "id": "1",
+      "studentId": 1,
+      "mentorId": 1,
+      "remark": "Strong in React and problem solving."
+    },
+    {
+      "id": "2",
+      "studentId": 2,
+      "mentorId": 1,
+      "remark": "Excellent Java backend skills."
+    },
+    {
+      "id": "3",
+      "studentId": 3,
+      "mentorId": 1,
+      "remark": "Good understanding of frontend basics, needs to improve in state management."
+    },
+    {
+      "id": "4",
+      "studentId": 4,
+      "mentorId": 1,
+      "remark": "Good understanding of frontend basics, needs to improve in state management."
+    },
+    {
+      "id": "81cf",
+      "studentId": 5,
+      "mentorId": 1,
+      "remark": "Communication skills are good"
+    },
+    {
+      "id": "9b87",
+      "studentId": "3e83",
+      "mentorId": 1,
+      "remark": "strong grasp of frontend technologies, especially React. With a little more practice in state management"
+    },
+    {
+      "id": "660f",
+      "studentId": "edf6",
+      "mentorId": 1,
+      "remark": "demonstrated a solid understanding of both frontend and backend technologies. Her full-stack project is well-structured and showcases her ability to build complete applications. She has good problem-solving skills and is on her way to becoming a proficient full-stack developer."
+    },
+    {
+      "id": "e72a",
+      "studentId": "bed8",
+      "mentorId": "1",
+      "remark": "Good understanding of frontend basics, needs to improve in state management."
+    },
+    {
+      "id": "333a",
+      "studentId": "5a62",
+      "mentorId": "1",
+      "remark": "Good understanding of frontend basics, needs to improve in state management."
+    }
+  ],
+  "pendingRequests": [
+    {
+      "id": "65c3",
+      "type": "info",
+      "username": "anjalikumar",
+      "data": {
+        "id": "bed8",
+        "username": "anjalikumar",
+        "firstName": "Anjali",
+        "lastName": "Kumar",
+        "email": "anjalikumar@gmail.com",
+        "phoneNumber": "6745869037",
+        "description": "Passionate about both frontend and backend technologies.",
+        "currentStatus": "Internship",
+        "photoUrl": "IMG-20241106-WA0002.jpg",
+        "graduationYear": "2026"
+      },
+      "status": "pending"
+    }
+  ]
+}
