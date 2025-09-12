@@ -19,12 +19,9 @@ export default function Navbar({ userRole, setUserRole }) {
       <div className="space-x-4">
         {userRole && <Link to="/home">Home</Link>}
 
-        {userRole === "user" && <Link to="/student/list">Student List</Link>}
+        {userRole === "viewer" && <Link to="/student/list">Student List</Link>}
         {userRole === "student" && <Link to="/student">Student Dashboard</Link>}
         {userRole === "mentor" && <Link to="/mentor/pending">Mentor Dashboard</Link>}
-        {userRole === "admin" && <Link to="/home">Admin Dashboard</Link>}
-        {userRole === "company" && <Link to="/home">Company Dashboard</Link>}
-
         {!userRole ? (
           <Link to="/">Login</Link>
         ) : (

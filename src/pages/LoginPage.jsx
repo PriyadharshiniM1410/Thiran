@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage({ setUserRole }) {
-  const [role, setRole] = useState("user");
+  const [role, setRole] = useState("viewer");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -44,8 +44,8 @@ export default function LoginPage({ setUserRole }) {
       setError("Please enter a valid email.");
       return;
     }
-    if (password.length < 10 ) {
-      setError("Password must be atleast lessthan 10 characters.");
+    if (password.length < 5) {
+      setError("Password must be atleast lessthan 5 characters.");
       return;
     }
     const roleLower = role.toLowerCase();
@@ -54,7 +54,7 @@ export default function LoginPage({ setUserRole }) {
     setUserRole(roleLower);
 
     
-    if (roleLower === "user") {
+    if (roleLower === "viewer") {
       navigate("/home");
     } 
     else if (roleLower === "student") {
@@ -62,12 +62,6 @@ export default function LoginPage({ setUserRole }) {
     }
     else if (roleLower === "mentor") {
       navigate("/mentor/pending");
-    } 
-    else if (roleLower === "admin") {
-      navigate("/admin");
-    } 
-    else if (roleLower === "company") {
-      navigate("/company");
     } 
     else {
       navigate("/home");
@@ -81,25 +75,24 @@ export default function LoginPage({ setUserRole }) {
         className="bg-white p-8 rounded-3xl shadow-2xl w-96 text-center"
       >
         <h2 className="text-3xl font-extrabold mb-6 text-indigo-700">Welcome</h2>
-
+        <h3 className="text-lg text-left font-bold mb-1 text-red-500">Select Role</h3>
         <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
           className="w-full border border-gray-300 p-3 rounded-xl mb-4"
         >
-          <option value="user">User</option>
+          <option value="viewer">Viewer</option>
           <option value="student">Student</option>
           <option value="mentor">Mentor</option>
-          <option value="admin">Admin</option>
-          <option value="company">Company</option>
         </select>
-
+        <h3 className="text-lg text-left font-bold mb-1 text-red-500">Email</h3>
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="w-full border border-gray-300 p-3 rounded-xl mb-4"/>
+        <h3 className="text-lg text-left font-bold mb-1 text-red-500">Password</h3>
         <input
           type="password"
           placeholder="Password"

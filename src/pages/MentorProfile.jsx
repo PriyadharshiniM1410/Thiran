@@ -21,7 +21,8 @@ export default function MentorProfile() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto my-12 p-6 bg-white shadow-lg rounded-xl">
+    <div className="min-h-screen bg-gradient-to-tr from-indigo-300 via-purple-300 to-pink-300 px-3 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-3xl mx-auto my-6 p-6 bg-white shadow-lg rounded-xl">
      
       <div className="flex flex-col sm:flex-row items-center gap-6 border-b pb-6">
         <img
@@ -64,6 +65,7 @@ export default function MentorProfile() {
         <h2 className="text-xl font-semibold text-green-600">Contact</h2>
         <p className="text-gray-700 mt-2">{mentor.email}</p>
       </div>
+    </div>
     </div>
   );
 }

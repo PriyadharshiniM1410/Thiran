@@ -138,7 +138,7 @@ export default function StudentInfoForm(props) {
 
   
   return (
-    <div className="max-w-3xl mx-auto mt-10 p-2 bg-purple-400 rounded-3xl shadow-xl">
+    <div className="max-w-3xl mx-auto mt-10 p-2 bg-cyan-400 rounded-3xl shadow-xl">
       <h2 className="text-3xl font-extrabold text-center text-gray-900 mt-5 mb-8">
         Student Information Form
       </h2>

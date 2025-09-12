@@ -87,13 +87,13 @@ export default function StudentProjectsForm({ onNext }) {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-6 bg-purple-400 rounded-2xl shadow-xl">
+    <div className="max-w-2xl mx-auto mt-10 p-6 bg-cyan-400 rounded-2xl shadow-xl">
       <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-8">
         Student Projects Form
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Username */}
+        
         <div>
           <label className="block text-lg font-semibold mb-1">Username</label>
           <input

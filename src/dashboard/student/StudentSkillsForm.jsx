@@ -77,13 +77,13 @@ export default function StudentSkillsForm({ onNext }) {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-6 bg-purple-400 rounded-2xl shadow-xl">
+    <div className="max-w-2xl mx-auto mt-10 p-6 bg-cyan-400 rounded-2xl shadow-xl">
       <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-8">
         Student Skills Form
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Username */}
+        
         <div>
           <h3 className="text-lg font-semibold mb-1">Username</h3>
           <input
@@ -100,7 +100,7 @@ export default function StudentSkillsForm({ onNext }) {
           {errors.username && <p className="text-red-600 mt-1">{errors.username}</p>}
         </div>
 
-        {/* Skills */}
+        
         {skills.map((skill, i) => (
           <div key={i}>
             <h3 className="text-lg font-semibold mb-1">Skill {i + 1}</h3>

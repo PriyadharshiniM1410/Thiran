@@ -58,26 +58,6 @@ export default function App() {
           <Route path="project" element={<StudentProjectsForm />} />
         </Route>
 
-        
-        <Route
-          path="/student/list"
-          element={
-            <ProtectedRoute allowedRoles={["student", "user", "mentor"]} userRole={userRole}>
-              <StudentList />
-            </ProtectedRoute>
-          }
-        />
-
-        
-        <Route
-          path="/student/profile/:username"
-          element={
-            <ProtectedRoute allowedRoles={["student", "user", "mentor"]} userRole={userRole}>
-              <StudentProfile />
-            </ProtectedRoute>
-          }
-        />
-
         <Route
           path="/mentor/*"
           element={
@@ -92,10 +72,28 @@ export default function App() {
           <Route path="list" element={<StudentList />} />
         </Route>
 
+         <Route
+          path="/student/list"
+          element={
+            <ProtectedRoute allowedRoles={["student", "viewer", "mentor"]} userRole={userRole}>
+              <StudentList />
+            </ProtectedRoute>
+          }
+        />
+        
+        <Route
+          path="/student/profile/:username"
+          element={
+            <ProtectedRoute allowedRoles={["student", "viewer", "mentor"]} userRole={userRole}>
+              <StudentProfile />
+            </ProtectedRoute>
+          }
+        />
+
         <Route
           path="/mentor/profile/:username"
           element={
-            <ProtectedRoute allowedRoles={["mentor", "student", "user"]} userRole={userRole}>
+            <ProtectedRoute allowedRoles={["mentor", "student", "viewer"]} userRole={userRole}>
               <MentorProfile />
             </ProtectedRoute>
           }

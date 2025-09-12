@@ -47,9 +47,9 @@ export default function StudentProfile() {
   if (student === undefined) return <p className="text-center mt-12 text-red-600">No student found.</p>;
 
   return (
-    <div className="max-w-4xl mx-auto my-12 p-6 bg-white shadow-xl rounded-2xl space-y-8">
+    <div className="min-h-screen bg-gradient-to-tr from-indigo-300 via-purple-300 to-pink-300 px-3 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto my-6 p-6 bg-white shadow-xl rounded-2xl space-y-8">
 
-      
       <div className="flex flex-col sm:flex-row items-center gap-6 border-b-2 border-indigo-100 pb-6">
         <img
           src={student.photoUrl || "https://via.placeholder.com/150?text=Student"}
@@ -125,7 +125,7 @@ export default function StudentProfile() {
           </div>
         ) : <p className="text-gray-500 mt-2">No remarks yet.</p>}
       </div>
-
+    </div>
     </div>
   );
 }
