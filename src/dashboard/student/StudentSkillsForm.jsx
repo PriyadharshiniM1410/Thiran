@@ -9,7 +9,7 @@ export default function StudentSkillsForm({ onNext }) {
   const skillOptions = [
     "Java","Python","C++","JavaScript","React","Node.js",
     "Spring Boot","Django","Machine Learning","Data Science",
-    "SQL","MongoDB","Kotlin","Flutter"
+    "SQL","MongoDB"
   ];
 
   
@@ -58,7 +58,8 @@ export default function StudentSkillsForm({ onNext }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validate()) return;
+    if (!validate()) 
+      return;
 
     try {
       await axios.post("http://localhost:5000/pendingRequests", {
@@ -70,8 +71,10 @@ export default function StudentSkillsForm({ onNext }) {
       alert("Skills submitted!");
       setUsername("");
       setSkills([""]);
-      if (onNext) onNext();
-    } catch (err) {
+      if (onNext) 
+        onNext();
+    } 
+    catch (err) {
       console.error(err);
     }
   };

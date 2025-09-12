@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function StudentCard({ student, userRole }) {
+export default function StudentCard({student}) {
   const profilePath = `/student/profile/${student.username}`;
 
   return (

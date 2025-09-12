@@ -58,8 +58,8 @@ export default function StudentInfoForm(props) {
     //username validate
     if (!student.username) {
       newErrors.username = "Username is required.";
-    } else if (student.username.length < 3) {
-      newErrors.username = "Username must be at least 3 characters.";
+    } else if (student.username.length < 5) {
+      newErrors.username = "Username must be atleast 5 characters.";
     } else if (student.username.indexOf(" ") !== -1) {
       newErrors.username = "Username should not contain spaces.";
     }
@@ -105,7 +105,8 @@ export default function StudentInfoForm(props) {
  
   function handleSubmit(event) {
     event.preventDefault();
-    if (!validate()) return;
+    if (!validate())
+       return;
 
     if (isApproved) 
       {
@@ -120,7 +121,8 @@ export default function StudentInfoForm(props) {
           .then(() => alert("Your update submitted for mentor approval."));
       }
     } 
-    else {
+    else 
+      {
       if (pendingId) 
         {
         axios.put(`http://localhost:5000/pendingRequests/${pendingId}`, student)
