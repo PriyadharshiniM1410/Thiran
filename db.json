@@ -8,7 +8,7 @@
       "email": "arun@example.com",
       "phoneNumber": "9876543210",
       "description": "Passionate MERN Stack Developer",
-      "currentYear": "FinalYear",
+      "graduationYear": "2025",
       "currentStatus": "Internship",
       "photoUrl": "IMG-20241106-WA0002.jpg"
     },
@@ -20,7 +20,7 @@
       "email": "priya@example.com",
       "phoneNumber": "9876500000",
       "description": "Java Backend Developer, loves Spring Boot",
-      "currentYear": "PassedOut",
+      "graduationYear": "2025",
       "currentStatus": "Internship",
       "photoUrl": "IMG-20241106-WA0002.jpg"
     },
@@ -32,7 +32,7 @@
       "email": "neha.verma@gmail.com",
       "phoneNumber": "9012345678",
       "description": "Love exploring AI and data science with Python.",
-      "currentYear": "PassedOut",
+      "graduationYear": "2023",
       "currentStatus": "Internship",
       "photoUrl": "IMG-20241106-WA0002.jpg"
     },
@@ -43,7 +43,7 @@
       "username": "priya98",
       "email": "priya.kumar@gmail.com",
       "phoneNumber": "9876501234",
-      "currentYear": "2nd Year",
+      "graduationYear": "2024",
       "currentStatus": "Internship",
       "description": "Frontend enthusiast exploring React.",
       "photoUrl": "IMG-20241106-WA0002.jpg"
@@ -55,7 +55,7 @@
       "username": "karthikm",
       "email": "karthik.m@gmail.com",
       "phoneNumber": "9876011223",
-      "currentYear": "2nd Year",
+      "graduationYear": "2026",
       "currentStatus": "Internship",
       "description": "Mobile app developer focusing on Android.",
       "photoUrl": "IMG-20241106-WA0002.jpg"
@@ -68,10 +68,9 @@
       "email": "rohit.singh@gmail.com",
       "phoneNumber": "9098765432",
       "description": "Frontend enthusiast exploring React.",
-      "currentYear": "PassedOut",
+      "graduationYear": "2024",
       "currentStatus": "NotEmployed",
-      "photoUrl": "IMG-20241106-WA0002.jpg",
-      "status": "pending"
+      "photoUrl": "IMG-20241106-WA0002.jpg"
     },
     {
       "id": "edf6",
@@ -81,10 +80,45 @@
       "email": "anjali.sharma@gmail.com",
       "phoneNumber": "9876543210",
       "description": "Passionate about both frontend and backend technologies.",
-      "currentYear": "Year3",
+      "graduationYear": "2025",
       "currentStatus": "Internship",
-      "photoUrl": "IMG-20241106-WA0002.jpg",
-      "status": "pending"
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "c7c0",
+      "firstName": "Aarav",
+      "lastName": "Mehta",
+      "username": "aarav25",
+      "email": "aaravmehta25@gmail.com",
+      "phoneNumber": "9098765432",
+      "graduationYear": "2026",
+      "currentStatus": "Internship",
+      "description": "Passionate about both frontend and backend technologies.",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "c7c0",
+      "firstName": "Aarav",
+      "lastName": "Mehta",
+      "username": "aarav25",
+      "email": "aaravmehta25@gmail.com",
+      "phoneNumber": "9098765432",
+      "graduationYear": "2026",
+      "currentStatus": "Internship",
+      "description": "Passionate about both frontend and backend technologies.",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "77f6",
+      "firstName": "Kaviya",
+      "lastName": "Dharshini",
+      "username": "kaviya05",
+      "email": "kaviya05@gmail.com",
+      "phoneNumber": "8883445670",
+      "graduationYear": "2024",
+      "currentStatus": "Internship",
+      "description": "passionate about web development and currently learning React",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
     }
   ],
   "mentors": [
@@ -194,6 +228,41 @@
       "id": "a901",
       "studentId": "5a62",
       "name": "Node.js"
+    },
+    {
+      "id": "17577368989380.14232731601759585",
+      "name": "Python",
+      "studentId": "5d67"
+    },
+    {
+      "id": "17577368989560.8607636399503498",
+      "name": "Machine Learning",
+      "studentId": "5d67"
+    },
+    {
+      "id": "17577375155540.09844081186400455",
+      "name": "Python",
+      "studentId": "5d67"
+    },
+    {
+      "id": "17577375949740.16937805491257063",
+      "name": "Python",
+      "studentId": "c7c0"
+    },
+    {
+      "id": "17577375949870.5236267468393334",
+      "name": "Machine Learning",
+      "studentId": "c7c0"
+    },
+    {
+      "id": "17577389043300.12226014307794486",
+      "name": "React",
+      "studentId": "77f6"
+    },
+    {
+      "id": "17577389043450.5497424054569665",
+      "name": "JavaScript",
+      "studentId": "77f6"
     }
   ],
   "projects": [
@@ -259,6 +328,33 @@
       "gitHub": "https://github.com/anjali/todo-app",
       "website": "https://anjali-todo-app.com",
       "studentId": "edf6"
+    },
+    {
+      "id": "17577370335530.6950266705128536",
+      "name": "ML Project",
+      "description": "Predictive model using Python and scikit-learn.",
+      "developmentArea": "Data Science",
+      "gitHub": "https://github.com/aarav25/ml-project",
+      "website": "https://aarav-ml.com",
+      "studentId": "c7c0"
+    },
+    {
+      "id": "17577375949970.5057769027388724",
+      "name": "ML Project",
+      "description": "Predictive model using Python and scikit-learn.",
+      "developmentArea": "Data Science",
+      "gitHub": "https://github.com/aarav25/ml-project",
+      "website": "https://aarav-ml.com",
+      "studentId": "c7c0"
+    },
+    {
+      "id": "17577389043580.29109893434116185",
+      "name": "E-commerce App",
+      "description": "Online shopping platform",
+      "developmentArea": "Fullstack ",
+      "gitHub": "https://github.com/kaviya05/e-commerce",
+      "website": "https://aarav-e-commerce.com",
+      "studentId": "77f6"
     }
   ],
   "studentMentorRemarks": [
@@ -315,7 +411,127 @@
       "studentId": "5a62",
       "mentorId": "1",
       "remark": "Good understanding of frontend basics, needs to improve in state management."
+    },
+    {
+      "id": "1757737033611",
+      "studentId": "c7c0",
+      "mentorId": 1,
+      "remark": "\"Strong Python and ML skills. Keep building real-world projects.\"",
+      "status": "approved"
+    },
+    {
+      "id": "17577375950120.10974921073371735",
+      "studentId": "c7c0",
+      "mentorId": 1,
+      "remark": "\"Strong Python and ML skills. Keep building real-world projects.\"",
+      "section": "projects",
+      "status": "approved"
+    },
+    {
+      "id": "17577389043750.022398205250497738",
+      "studentId": "77f6",
+      "mentorId": 1,
+      "remark": "Strong in React and problem solving.",
+      "section": "projects",
+      "status": "approved"
     }
   ],
-  "pendingRequests": []
+  "pendingRequests": [
+    {
+      "id": "dd10",
+      "firstName": "Meera",
+      "lastName": "Iyer",
+      "username": "meera_iyer12",
+      "email": "meera.iyer12@gmail.com",
+      "phoneNumber": "9876543211",
+      "graduationYear": "2025",
+      "currentStatus": "Internship",
+      "description": "Passionate about web development and digital design.",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "43c2",
+      "username": "meera_iyer12",
+      "skills": [
+        "JavaScript",
+        "React"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "a340",
+      "username": "meera_iyer12",
+      "projects": [
+        {
+          "name": "E-commerce Landing Page",
+          "description": "Built a responsive landing page for a fictional online store with interactive components.",
+          "developmentArea": "Web Development",
+          "gitHub": "https://github.com/meera_iyer12/e-commerce-landindpage",
+          "website": "https://meera_iyer12-e-commerce.com"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "6b09",
+      "firstName": "Arjun",
+      "lastName": "Kapoor",
+      "username": "arjun.kapoor7",
+      "email": "arjun.kapoor7@gmail.com",
+      "phoneNumber": "9876543212",
+      "graduationYear": "2024",
+      "currentStatus": "Internship",
+      "description": "Interested in mobile app development and cloud technologies.",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "1375",
+      "username": "arjun.kapoor7",
+      "skills": [
+        "Java",
+        "JavaScript"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "00e0",
+      "username": "arjun.kapoor7",
+      "projects": [
+        {
+          "name": "Task Manager App",
+          "description": "Android app to create, edit, and delete tasks with Firebase backend.",
+          "developmentArea": "Fullstack",
+          "gitHub": "https://github.com/arjun.kapoor7/task-manager-app",
+          "website": ""
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "69dc",
+      "firstName": "Anika",
+      "lastName": "Desai",
+      "username": "anika_desai33",
+      "email": "anika.desai33@gmail.com",
+      "phoneNumber": "9876543213",
+      "graduationYear": "2026",
+      "currentStatus": "Internship",
+      "description": "Loves working on AI projects and learning new programming languages.",
+      "photoUrl": "IMG-20241106-WA0002.jpg"
+    },
+    {
+      "id": "ef38",
+      "username": "anika_desai33",
+      "projects": [
+        {
+          "name": "Movie Recommendation System",
+          "description": "Recommends movies based on user ratings using Python and ML algorithms.",
+          "developmentArea": "Fullstack",
+          "gitHub": "https://github.com/anika_desai33/movie-recommender",
+          "website": ""
+        }
+      ],
+      "status": "pending"
+    }
+  ]
 }

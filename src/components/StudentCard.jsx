@@ -7,10 +7,11 @@ export default function StudentCard({student}) {
     <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-6 flex flex-col items-center text-center w-full max-w-xs">
       
       <img
-        src={student.photoUrl || "https://via.placeholder.com/150?text=Student"}
-        alt={`${student.firstName} ${student.lastName}`}
-        className="w-28 h-28 rounded-full object-cover border-4 border-indigo-100 mb-4"
-      />
+          src={student.photoUrl || "https://via.placeholder.com/100?text=No+Photo"}
+          alt={`${student.firstName} ${student.lastName}`}
+          className="w-24 h-24 rounded-full object-cover border"
+        />
+
 
       <div className="flex flex-col items-center">
         <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
@@ -21,7 +22,7 @@ export default function StudentCard({student}) {
         </p>
       </div>
     
-      <p className="text-gray-500 text-sm sm:text-base mt-2 leading-relaxed">
+      <p className="text-gray-600 text-sm sm:text-base mt-2 leading-relaxed">
         {student.description || "No description provided."}
       </p>
 

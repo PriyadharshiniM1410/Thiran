@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage({ setUserRole }) {
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("viewer");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -75,7 +75,7 @@ export default function LoginPage({ setUserRole }) {
         className="bg-white p-8 rounded-3xl shadow-2xl w-96 text-center"
       >
         <h2 className="text-3xl font-extrabold mb-6 text-indigo-700">Welcome</h2>
-        <h3 className="text-lg text-left font-bold mb-1 text-red-500">Select Role</h3>
+        <h3 className="text-lg text-left font-bold mb-1 text-red-500">Role</h3>
         <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
