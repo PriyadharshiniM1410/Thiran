@@ -97,18 +97,6 @@
       "photoUrl": "IMG-20241106-WA0002.jpg"
     },
     {
-      "id": "c7c0",
-      "firstName": "Aarav",
-      "lastName": "Mehta",
-      "username": "aarav25",
-      "email": "aaravmehta25@gmail.com",
-      "phoneNumber": "9098765432",
-      "graduationYear": "2026",
-      "currentStatus": "Internship",
-      "description": "Passionate about both frontend and backend technologies.",
-      "photoUrl": "IMG-20241106-WA0002.jpg"
-    },
-    {
       "id": "77f6",
       "firstName": "Kaviya",
       "lastName": "Dharshini",
@@ -230,11 +218,6 @@
       "name": "Node.js"
     },
     {
-      "id": "17577368989380.14232731601759585",
-      "name": "Python",
-      "studentId": "5d67"
-    },
-    {
       "id": "17577368989560.8607636399503498",
       "name": "Machine Learning",
       "studentId": "5d67"
@@ -247,11 +230,6 @@
     {
       "id": "17577375949740.16937805491257063",
       "name": "Python",
-      "studentId": "c7c0"
-    },
-    {
-      "id": "17577375949870.5236267468393334",
-      "name": "Machine Learning",
       "studentId": "c7c0"
     },
     {
@@ -328,15 +306,6 @@
       "gitHub": "https://github.com/anjali/todo-app",
       "website": "https://anjali-todo-app.com",
       "studentId": "edf6"
-    },
-    {
-      "id": "17577370335530.6950266705128536",
-      "name": "ML Project",
-      "description": "Predictive model using Python and scikit-learn.",
-      "developmentArea": "Data Science",
-      "gitHub": "https://github.com/aarav25/ml-project",
-      "website": "https://aarav-ml.com",
-      "studentId": "c7c0"
     },
     {
       "id": "17577375949970.5057769027388724",
@@ -416,15 +385,7 @@
       "id": "1757737033611",
       "studentId": "c7c0",
       "mentorId": 1,
-      "remark": "\"Strong Python and ML skills. Keep building real-world projects.\"",
-      "status": "approved"
-    },
-    {
-      "id": "17577375950120.10974921073371735",
-      "studentId": "c7c0",
-      "mentorId": 1,
-      "remark": "\"Strong Python and ML skills. Keep building real-world projects.\"",
-      "section": "projects",
+      "remark": "Strong Python and ML skills. Keep building real-world projects.",
       "status": "approved"
     },
     {

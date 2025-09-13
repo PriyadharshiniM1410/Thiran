@@ -54,7 +54,7 @@ export default function StudentProfile() {
         <img
           src={student.photoUrl || "https://via.placeholder.com/150?text=Student"}
           alt={`${student.firstName} ${student.lastName}`}
-          className="w-28 h-28 rounded-full border-4 border-indigo-200 shadow-lg"
+          className="w-28 h-28 rounded-full border-4 border-indigo-200 shadow-lg text-center"
         />
         <div className="flex-1 text-center sm:text-left">
           <h1 className="text-3xl font-bold text-indigo-900">{student.firstName} {student.lastName}</h1>
