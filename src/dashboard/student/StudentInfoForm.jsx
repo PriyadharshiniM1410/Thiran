@@ -56,12 +56,21 @@ export default function StudentInfoForm(props) {
     if (!student.lastName) newErrors.lastName = "Last Name is required.";
 
     //username validate
-    if (!student.username) {
+      if (!student.username) {
       newErrors.username = "Username is required.";
     } else if (student.username.length < 5) {
-      newErrors.username = "Username must be atleast 5 characters.";
-    } else if (student.username.indexOf(" ") !== -1) {
-      newErrors.username = "Username should not contain spaces.";
+      newErrors.username = "Username must be at least 5 characters.";
+    } else {
+      let valid = true;
+      for (let i = 0; i < student.username.length; i++) {
+        const char = student.username[i];
+        if (!((char >= "a" && char <= "z") ||(char >= "A" && char <= "Z") ||char === "_" ||char === ".")) 
+        {
+          valid = false;
+          break;
+        }
+      }
+      if (!valid) newErrors.username = "Username can only contain letters, _ and .";
     }
 
     //mail validate

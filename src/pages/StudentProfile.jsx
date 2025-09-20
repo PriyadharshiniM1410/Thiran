@@ -125,6 +125,10 @@ export default function StudentProfile() {
           </div>
         ) : <p className="text-gray-500 mt-2">No remarks yet.</p>}
       </div>
+      <div className="p-4 rounded-xl border-l-4 border-yellow-400 bg-yellow-50 shadow-sm">
+          <h2 className="text-xl font-semibold text-yellow-700 mb-2 border-b border-yellow-200 pb-1">Contact</h2>
+          <a href={`mailto:${student.email}`} className="text-blue-800 hover:underline">{student.email}</a>
+      </div>
     </div>
     </div>
   );

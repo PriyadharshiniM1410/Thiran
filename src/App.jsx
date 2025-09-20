@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import ProtectedRoute from "./components/ProtectedRoute";
+import SignupPage from "./pages/SignupPage";
 import Home from "./pages/Home";
-import LoginPage from "./pages/LoginPage";
 
-// Student
+
 import StudentDashboard from "./dashboard/student/StudentDashboard";
 import StudentInfoForm from "./dashboard/student/StudentInfoForm";
 import StudentSkillsForm from "./dashboard/student/StudentSkillsForm";
@@ -13,13 +14,12 @@ import StudentProjectsForm from "./dashboard/student/StudentProjectsForm";
 import StudentProfile from "./pages/StudentProfile";
 import StudentList from "./pages/StudentList";
 
-// Mentor
+
 import MentorDashboard from "./dashboard/mentors/MentorDashboard";
 import MentorProfile from "./pages/MentorProfile";
 import PendingRequests from "./dashboard/mentors/PendingRequests";
 import PendingDetails from "./dashboard/mentors/PendingDetails";
 
-import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
   const [userRole, setUserRole] = useState(null);
@@ -37,17 +37,20 @@ export default function App() {
         <Route
           path="/"
           element={
-            !userRole ? <LoginPage setUserRole={setUserRole} /> : <Navigate to="/home" replace />
+            !userRole ? (
+              <SignupPage setUserRole={setUserRole} />
+            ) : (
+              <Navigate to="/home" replace />
+            )
           }
         />
-
-      
         <Route path="/home" element={<Home />} />
 
+        
         <Route
           path="/student/*"
           element={
-            <ProtectedRoute allowedRoles="student" userRole={userRole}>
+            <ProtectedRoute allowedRoles={["student"]} userRole={userRole}>
               <StudentDashboard />
             </ProtectedRoute>
           }
@@ -58,10 +61,11 @@ export default function App() {
           <Route path="project" element={<StudentProjectsForm />} />
         </Route>
 
+        
         <Route
           path="/mentor/*"
           element={
-            <ProtectedRoute allowedRoles="mentor" userRole={userRole}>
+            <ProtectedRoute allowedRoles={["mentor"]} userRole={userRole}>
               <MentorDashboard />
             </ProtectedRoute>
           }
@@ -72,19 +76,26 @@ export default function App() {
           <Route path="list" element={<StudentList />} />
         </Route>
 
-         <Route
+        
+        <Route
           path="/student/list"
           element={
-            <ProtectedRoute allowedRoles={["student", "viewer", "mentor"]} userRole={userRole}>
+            <ProtectedRoute
+              allowedRoles={["viewer","student", "mentor"]}
+              userRole={userRole}
+            >
               <StudentList />
             </ProtectedRoute>
           }
         />
-        
+
         <Route
           path="/student/profile/:username"
           element={
-            <ProtectedRoute allowedRoles={["student", "viewer", "mentor"]} userRole={userRole}>
+            <ProtectedRoute
+              allowedRoles={["viewer","student", "mentor"]}
+              userRole={userRole}
+            >
               <StudentProfile />
             </ProtectedRoute>
           }
@@ -93,12 +104,16 @@ export default function App() {
         <Route
           path="/mentor/profile/:username"
           element={
-            <ProtectedRoute allowedRoles={["mentor", "student", "viewer"]} userRole={userRole}>
+            <ProtectedRoute
+              allowedRoles={["mentor", "student"]}
+              userRole={userRole}
+            >
               <MentorProfile />
             </ProtectedRoute>
           }
         />
 
+        
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
