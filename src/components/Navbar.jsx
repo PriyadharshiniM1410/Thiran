@@ -35,7 +35,7 @@ export default function Navbar({ userRole, setUserRole }) {
 
   if (userRole === "viewer") links.push({ name: "Student List", path: "/student/list" });
   if (userRole === "student") links.push({ name: "Student Dashboard", path: "/student" });
-  if (userRole === "mentor") {links.push({ name: "Mentor Dashboard", path: "/mentor/pending" });} 
+  if (userRole === "mentor") {links.push({ name: "Admin Dashboard", path: "/mentor/pending" });} 
 
   return (
     <nav className="bg-gray-800 text-white px-6 py-3 flex justify-between items-center">
