@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { Users, ClipboardList } from "lucide-react"; // removed LogOut import
+import { Users, ClipboardList, LogOut } from "lucide-react";
 
 export default function MentorDashboard() {
   const location = useLocation();
@@ -13,10 +13,16 @@ export default function MentorDashboard() {
     }
   }, [navigate]);
 
+ 
   const navItems = [
     { path: "/mentor/pending", label: "Pending Requests", icon: <ClipboardList size={18} /> },
     { path: "/mentor/list", label: "Approved Students", icon: <Users size={18} /> },
   ];
+
+  const handleLogout = () => {
+    localStorage.removeItem("userRole");
+    navigate("/");
+  };
 
   return (
     <div className="flex min-h-screen bg-gradient-to-tr from-indigo-300 via-purple-300 to-pink-300 p-2">

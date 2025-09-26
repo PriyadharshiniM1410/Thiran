@@ -3,13 +3,14 @@ import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Info, Code, FolderGit2, Users } from "lucide-react";
 
 export default function StudentDashboard() {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const navigate = useNavigate();   
+  const location = useLocation();   
+
 
   useEffect(() => {
     const role = localStorage.getItem("userRole");
     if (role !== "student") {
-      navigate("/");
+      navigate("/"); 
     }
   }, [navigate]);
 
@@ -20,6 +21,12 @@ export default function StudentDashboard() {
     { path: "/student/list", label: "Student List", icon: <Users size={18} /> },
   ];
 
+ 
+  const handleLogout = () => {
+    localStorage.removeItem("userRole");
+    navigate("/");
+  };
+
   return (
     <div className="flex min-h-screen bg-gradient-to-tr from-indigo-300 via-purple-300 to-pink-300 p-2">
       <aside className="w-max bg-pink-600 text-white flex flex-col p-4 rounded-2xl shadow-lg">
@@ -28,21 +35,19 @@ export default function StudentDashboard() {
         </h1>
 
         {navItems.map((item) => (
-          <Link
-            key={item.path}
-            to={item.path}
+          <Link key={item.path} to={item.path}
             className={`flex items-center gap-3 p-5 rounded-2xl 
-              ${location.pathname === item.path ? "bg-pink-400" : "hover:bg-pink-500"}`}
-          >
+              ${location.pathname === item.path ? "bg-pink-400" : "hover:bg-pink-500"}`}>
             {item.icon}
             {item.label}
           </Link>
         ))}
       </aside>
-
-      <main className="flex-1 p-4 ml-4 bg-gradient-to-tr from-indigo-200 via-purple-300 to-pink-300 rounded-2xl shadow-md">
+            <main className="flex-1 p-4 ml-4 bg-gradient-to-tr from-indigo-200 via-purple-300 to-pink-300  rounded-2xl shadow-md">
         <Outlet />
-      </main>
+        </main>
     </div>
   );
 }
+
+
