@@ -28,7 +28,7 @@ export default function MentorDashboard() {
     <div className="flex min-h-screen bg-gradient-to-tr from-indigo-300 via-purple-300 to-pink-300 p-2">
       <aside className="w-64 bg-pink-600 text-white p-6 flex flex-col rounded-2xl shadow-lg">
         <h1 className="text-2xl font-extrabold mb-6 text-center">
-          <Link to="/mentor">Admin Dashboard</Link>
+          <Link to="/mentor">Mentor Dashboard</Link>
         </h1>
 
         <nav className="flex flex-col gap-6 flex-1">
